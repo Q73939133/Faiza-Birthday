@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Happy Birthday Faiza! 🎂</title>
+    <meta name="description" content="A rare and beautiful birthday wish for Faiza — with love, cake, and confetti!">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Autoplay Overlay -->
+    <div class="autoplay-overlay" id="autoplayOverlay">
+        <div class="autoplay-card">
+            <div class="autoplay-emoji">🎂</div>
+            <h2 class="autoplay-title">Happy Birthday<br><span>Faiza</span></h2>
+            <p class="autoplay-subtitle">Tap to start the celebration ✨</p>
+            <button class="autoplay-btn" id="autoplayBtn">🎵 Start Celebration</button>
+        </div>
+    </div>
+    <!-- Background -->
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+    <div class="noise-overlay"></div>
+    <div class="sparkle-field" id="sparkleField"></div>
+    <div class="balloons-container" id="balloonsContainer"></div>
+    <canvas id="fireworksCanvas"></canvas>
+
+    <!-- Music Toggle -->
+    <div class="music-control" id="musicControl">
+        <button class="music-btn" id="musicBtn" title="Toggle Music">🔇</button>
+        <div class="track-indicator" id="trackIndicator">
+            <span class="track-dot active" data-track="guitar"></span>
+            <span class="track-label">♪ Guitar</span>
+        </div>
+    </div>
+    <audio id="bgGuitar" loop preload="auto">
+        <source src="guitar.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Page -->
+    <div class="page-wrapper">
+
+        <!-- Title -->
+        <div class="title-area">
+            <div class="title-badge">
+                <span>🎂</span>
+                <span>Happy Birthday</span>
+                <span>🎂</span>
+            </div>
+            <div class="title-sub">Happy Birthday</div>
+            <h1 class="title-name">Faiza</h1>
+            <p class="title-tagline">✨ Wishing you a magical day ✨</p>
+        </div>
+
+        <!-- Photo Section -->
+        <div class="photo-section">
+            <div class="photo-frame">
+                <img src="Fiaza.png" alt="Faiza" class="birthday-photo">
+                <div class="photo-glow"></div>
+            </div>
+            <p class="photo-caption">✨ The Birthday Queen ✨</p>
+        </div>
+
+        <!-- ═══ MEMORY FILMSTRIP ═══ -->
+        <div class="filmstrip-section">
+            <div class="section-heading reveal-item">
+                <span class="section-icon">🎞️</span>
+                <h2 class="section-title">Beautiful Moments</h2>
+                <p class="section-subtitle">A journey through memories ✨</p>
+            </div>
+            <div class="filmstrip-track" id="filmstripTrack">
+                <div class="filmstrip-slide"><img src="image/F1.jpg" alt="Memory 1"></div>
+                <div class="filmstrip-slide"><img src="image/F2.jpg" alt="Memory 2"></div>
+                <div class="filmstrip-slide"><img src="image/F3.jpg" alt="Memory 3"></div>
+                <div class="filmstrip-slide"><img src="image/F4.jpg" alt="Memory 4"></div>
+                <div class="filmstrip-slide"><img src="image/F5.jpg" alt="Memory 5"></div>
+                <div class="filmstrip-slide"><img src="image/F6.jpg" alt="Memory 6"></div>
+                <div class="filmstrip-slide"><img src="image/F7.jpg" alt="Memory 7"></div>
+                <div class="filmstrip-slide"><img src="image/F8.jpg" alt="Memory 8"></div>
+            </div>
+        </div>
+
+        <!-- Cake -->
+        <div class="cake-scene" id="cakeScene">
+            <div class="relight-msg" id="relightMsg">✨ Click to relight ✨</div>
+
+            <!-- Candles -->
+            <div class="candles-row" id="candlesRow">
+                <div class="candle">
+                    <div class="flame-wrapper">
+                        <div class="flame"></div>
+                        <div class="smoke"></div>
+                    </div>
+                    <div class="candle-stick"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame-wrapper">
+                        <div class="flame"></div>
+                        <div class="smoke"></div>
+                    </div>
+                    <div class="candle-stick"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame-wrapper">
+                        <div class="flame"></div>
+                        <div class="smoke"></div>
+                    </div>
+                    <div class="candle-stick"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame-wrapper">
+                        <div class="flame"></div>
+                        <div class="smoke"></div>
+                    </div>
+                    <div class="candle-stick"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame-wrapper">
+                        <div class="flame"></div>
+                        <div class="smoke"></div>
+                    </div>
+                    <div class="candle-stick"></div>
+                </div>
+            </div>
+
+            <!-- Cake Body -->
+            <div class="cake">
+                <div class="tier-top">
+                    <div class="tier-top-decor"></div>
+                </div>
+                <div class="tier-middle">
+                    <div class="tier-middle-dots">
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="cake-text">Faiza ♥</span>
+                </div>
+                <div class="tier-bottom">
+                    <div class="tier-bottom-rosettes">
+                        <div class="rosette"></div>
+                        <div class="rosette"></div>
+                        <div class="rosette"></div>
+                        <div class="rosette"></div>
+                        <div class="rosette"></div>
+                        <div class="rosette"></div>
+                        <div class="rosette"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cake-plate"></div>
+            <span class="click-hint">tap the cake ✨</span>
+        </div>
+
+        <!-- ═══ PHOTO MOSAIC GALLERY ═══ -->
+        <div class="gallery-section">
+            <div class="section-heading reveal-item">
+                <span class="section-icon">📸</span>
+                <h2 class="section-title">Gallery of Smiles</h2>
+                <p class="section-subtitle">Every picture tells a story 💫</p>
+            </div>
+            <div class="mosaic-grid">
+                <div class="mosaic-item mosaic-tall reveal-item" data-img="image/F9.jpg">
+                    <img src="image/F9.jpg" alt="Gallery 1" loading="lazy">
+                    <div class="mosaic-overlay"><span>✨</span></div>
+                </div>
+                <div class="mosaic-item reveal-item" data-img="image/F10.jpg">
+                    <img src="image/F10.jpg" alt="Gallery 2" loading="lazy">
+                    <div class="mosaic-overlay"><span>💖</span></div>
+                </div>
+                <div class="mosaic-item reveal-item" data-img="image/F11.jpg">
+                    <img src="image/F11.jpg" alt="Gallery 3" loading="lazy">
+                    <div class="mosaic-overlay"><span>🌟</span></div>
+                </div>
+                <div class="mosaic-item mosaic-wide reveal-item" data-img="image/F12.jpg">
+                    <img src="image/F12.jpg" alt="Gallery 4" loading="lazy">
+                    <div class="mosaic-overlay"><span>🌸</span></div>
+                </div>
+                <div class="mosaic-item reveal-item" data-img="image/F13.jpg">
+                    <img src="image/F13.jpg" alt="Gallery 5" loading="lazy">
+                    <div class="mosaic-overlay"><span>💫</span></div>
+                </div>
+                <div class="mosaic-item mosaic-tall reveal-item" data-img="image/F14.jpg">
+                    <img src="image/F14.jpg" alt="Gallery 6" loading="lazy">
+                    <div class="mosaic-overlay"><span>🎀</span></div>
+                </div>
+                <div class="mosaic-item reveal-item" data-img="image/F15.jpg">
+                    <img src="image/F15.jpg" alt="Gallery 7" loading="lazy">
+                    <div class="mosaic-overlay"><span>🌺</span></div>
+                </div>
+                <div class="mosaic-item mosaic-wide reveal-item" data-img="image/F16.jpg">
+                    <img src="image/F16.jpg" alt="Gallery 8" loading="lazy">
+                    <div class="mosaic-overlay"><span>💐</span></div>
+                </div>
+                <div class="mosaic-item reveal-item" data-img="image/F17.jpg">
+                    <img src="image/F17.jpg" alt="Gallery 9" loading="lazy">
+                    <div class="mosaic-overlay"><span>🦋</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gift Box -->
+        <div class="gift-section">
+            <div class="gift-box" id="giftBox">
+                <div class="gift-emoji">🎁</div>
+                <span class="gift-label">Tap to open your gift</span>
+            </div>
+            <div class="gift-reveal" id="giftReveal">
+                <p class="gift-reveal-msg">
+                    Dear <em>Faiza</em>,<br><br>
+                    You bring <em>light</em> and <em>joy</em> to everyone around you.
+                    May this year bless you with all the <em>happiness</em> your heart can hold,
+                    and may your dreams unfold like the most beautiful sunrise. 🌅<br><br>
+                    Here's to <em>you</em> — rare, wonderful, and absolutely irreplaceable. 💫
+                </p>
+            </div>
+        </div>
+
+        <!-- ═══ POLAROID COLLAGE ═══ -->
+        <div class="polaroid-section reveal-item">
+            <div class="section-heading">
+                <span class="section-icon">💝</span>
+                <h2 class="section-title">Cherished Memories</h2>
+                <p class="section-subtitle">Close to the heart, forever 💕</p>
+            </div>
+            <div class="polaroid-grid">
+                <div class="polaroid-card" style="--rotate: -5deg; --delay: 0s">
+                    <div class="polaroid-img"><img src="image/F1.jpg" alt="Memory"></div>
+                    <p class="polaroid-caption">Smiles & sunshine ☀️</p>
+                </div>
+                <div class="polaroid-card" style="--rotate: 3deg; --delay: 0.15s">
+                    <div class="polaroid-img"><img src="image/F4.jpg" alt="Memory"></div>
+                    <p class="polaroid-caption">Golden moments 🌟</p>
+                </div>
+                <div class="polaroid-card" style="--rotate: -2deg; --delay: 0.3s">
+                    <div class="polaroid-img"><img src="image/F7.jpg" alt="Memory"></div>
+                    <p class="polaroid-caption">Joy in every frame 📸</p>
+                </div>
+                <div class="polaroid-card" style="--rotate: 4deg; --delay: 0.45s">
+                    <div class="polaroid-img"><img src="image/F5.jpg" alt="Memory"></div>
+                    <p class="polaroid-caption">Forever cherished 💖</p>
+                </div>
+                <div class="polaroid-card" style="--rotate: -3deg; --delay: 0.6s">
+                    <div class="polaroid-img"><img src="image/F8.jpg" alt="Memory"></div>
+                    <p class="polaroid-caption">A beautiful soul 🌸</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ BIRTHDAY CARD GENERATOR ═══ -->
+        <div class="card-gen-section reveal-item">
+            <div class="section-heading">
+                <span class="section-icon">🎴</span>
+                <h2 class="section-title">Create Your Card</h2>
+                <p class="section-subtitle">Design a unique birthday card & download as PNG 🎨</p>
+            </div>
+
+            <!-- Design Picker -->
+            <div class="card-gen-designs">
+                <p class="card-gen-label">Choose a Design</p>
+                <div class="design-grid" id="designGrid">
+                    <button class="design-option active" data-design="elegant" title="Maroon Gold">
+                        <div class="design-preview" style="background: linear-gradient(135deg, #4a0e0e, #7f1d1d); border: 2px solid #fbbf24;"></div>
+                        <span>Elegant</span>
+                    </button>
+                    <button class="design-option" data-design="rose" title="Deep Rose">
+                        <div class="design-preview" style="background: linear-gradient(135deg, #5c0a2e, #8b1a3a); border: 2px solid #f9a8d4;"></div>
+                        <span>Rose</span>
+                    </button>
+                    <button class="design-option" data-design="ocean" title="Deep Navy">
+                        <div class="design-preview" style="background: linear-gradient(135deg, #0a0e3d, #142560); border: 2px solid #67e8f9;"></div>
+                        <span>Ocean</span>
+                    </button>
+                    <button class="design-option" data-design="sunset" title="Maroon Amber">
+                        <div class="design-preview" style="background: linear-gradient(135deg, #3d0a0a, #6b1a1a); border: 2px solid #fdba74;"></div>
+                        <span>Sunset</span>
+                    </button>
+                    <button class="design-option" data-design="lavender" title="Royal Blue">
+                        <div class="design-preview" style="background: linear-gradient(135deg, #0d1354, #1a237e); border: 2px solid #c4b5fd;"></div>
+                        <span>Lavender</span>
+                    </button>
+                    <button class="design-option" data-design="forest" title="Midnight Emerald">
+                        <div class="design-preview" style="background: linear-gradient(135deg, #0a2a2a, #0d3d3d); border: 2px solid #86efac;"></div>
+                        <span>Forest</span>
+                    </button>
+                    <button class="design-option" data-design="custom" title="Custom Colors">
+                        <div class="design-preview" style="background: linear-gradient(135deg, #7f1d1d, #142560, #4c1d95); border: 2px solid #fff;"></div>
+                        <span>Custom</span>
+                    </button>
+                </div>
+                <!-- Custom Color Picker Panel -->
+                <div class="custom-color-panel" id="customColorPanel">
+                    <p class="custom-color-title">🎨 Mix Your Colors</p>
+                    <div class="color-row">
+                        <div class="color-group">
+                            <label for="customBg1">Background 1</label>
+                            <input type="color" id="customBg1" value="#4a0e0e">
+                        </div>
+                        <div class="color-group">
+                            <label for="customBg2">Background 2</label>
+                            <input type="color" id="customBg2" value="#142560">
+                        </div>
+                        <div class="color-group">
+                            <label for="customBg3">Background 3</label>
+                            <input type="color" id="customBg3" value="#1a0505">
+                        </div>
+                        <div class="color-group">
+                            <label for="customAccent">Accent</label>
+                            <input type="color" id="customAccent" value="#fbbf24">
+                        </div>
+                        <div class="color-group">
+                            <label for="customText">Text</label>
+                            <input type="color" id="customText" value="#fefce8">
+                        </div>
+                    </div>
+                    <div class="color-preview-bar" id="colorPreviewBar" style="background: linear-gradient(135deg, #1a0505, #4a0e0e, #142560);"></div>
+                </div>
+            </div>
+
+            <!-- Customization Form -->
+            <div class="card-gen-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cardName">Recipient Name</label>
+                        <input type="text" id="cardName" placeholder="Faiza" value="Faiza" maxlength="20">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardFrom">From</label>
+                        <input type="text" id="cardFrom" placeholder="Your name" maxlength="25">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cardMessage">Your Message</label>
+                    <textarea id="cardMessage" rows="3" maxlength="200" placeholder="Wishing you the happiest birthday filled with love and joy!">Wishing you the happiest birthday filled with love and joy!</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Choose a Photo</label>
+                    <div class="photo-picker" id="photoPicker">
+                        <div class="photo-pick-item active" data-photo="Fiaza.png"><img src="Fiaza.png" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F1.jpg"><img src="image/F1.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F2.jpg"><img src="image/F2.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F3.jpg"><img src="image/F3.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F4.jpg"><img src="image/F4.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F5.jpg"><img src="image/F5.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F6.jpg"><img src="image/F6.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F7.jpg"><img src="image/F7.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F8.jpg"><img src="image/F8.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F9.jpg"><img src="image/F9.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F10.jpg"><img src="image/F10.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F11.jpg"><img src="image/F11.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F12.jpg"><img src="image/F12.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F13.jpg"><img src="image/F13.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F14.jpg"><img src="image/F14.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F15.jpg"><img src="image/F15.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F16.jpg"><img src="image/F16.jpg" alt="Photo"></div>
+                        <div class="photo-pick-item" data-photo="image/F17.jpg"><img src="image/F17.jpg" alt="Photo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview -->
+            <div class="card-gen-preview">
+                <p class="card-gen-label">Preview</p>
+                <canvas id="cardCanvas" width="1200" height="800"></canvas>
+            </div>
+
+            <!-- Download Button -->
+            <button class="card-download-btn" id="cardDownloadBtn">
+                📥 Download Birthday Card (PNG)
+            </button>
+        </div>
+
+        <!-- Wish -->
+        <div class="wish-section">
+            <p class="wish-text">
+                May your day be filled with <em>love</em>, <em>laughter</em>,
+                and all the <em>beautiful moments</em> you truly deserve.
+                Wishing you a year ahead as wonderful and radiant as you are! 🌟
+            </p>
+            <div class="wish-heart">💖</div>
+            <p class="birth-date">Born on <strong>March 12, 2002</strong></p>
+        </div>
+
+        <div class="page-footer">Made with ❤️ for Faiza</div>
+
+    <!-- ═══ LIGHTBOX ═══ -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">✕</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Full view">
+    </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
